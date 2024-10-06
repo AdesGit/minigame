@@ -51,7 +51,7 @@ export default function Home() {
               alt={theme.name}
               width={100}
               height={100}
-              className="mb-2 rounded-full"
+              className="mb-2"
             />
             <span className="text-center text-sm">{theme.name}</span>
           </Button>
@@ -64,8 +64,8 @@ export default function Home() {
           <Image
             src="https://i.postimg.cc/d3nY9GZr/logobig.png"
             alt="Logo"
-            layout="fill"
-            objectFit="contain"
+            fill
+            style={{ objectFit: 'contain' }}
             className="rounded-lg"
           />
         </div>
