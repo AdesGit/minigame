@@ -37,27 +37,28 @@ export default function Home() {
 
   return (
     <div className="container mx-auto p-4">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
         {themeData.map((theme: Theme, index: number) => (
           <div key={index} className="flex flex-col items-center">
             <Button
               variant="outline"
               onClick={() => handleButtonClick(theme.name)}
-              className="w-full h-40 flex items-center justify-center p-2"
+              className="w-full flex items-center justify-center p-0 m-0"
             >
               <Image
                 src={theme.imageUrl}
                 alt={theme.name}
-                width={100}
-                height={100}
-                className="mb-2"
+                width={150}
+                height={150}
+                className="m-0"
               />
             </Button>
-            <span className="text-center text-sm mt-2">{theme.name}</span>
+            <span className="text-center text-xs mt-1">{theme.name}</span>
           </div>
         ))}
       </div>
-      <div className="mt-8 p-4 bg-secondary rounded-lg">
+      <div className="mt-4 p-4 bg-secondary rounded-lg">
+        {currentTheme && <h2 className="text-xl font-semibold mb-2">{currentTheme}</h2>}
         {currentQuestion && <p className="text-lg mb-4">{currentQuestion}</p>}
         <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px]">
           <Image
