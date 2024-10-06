@@ -37,20 +37,20 @@ export default function Home() {
 
   return (
     <div className="container mx-auto p-4">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-8">
         {themeData.map((theme: Theme, index: number) => (
           <div key={index} className="flex flex-col items-center">
             <Button
               variant="outline"
               onClick={() => handleButtonClick(theme.name)}
-              className="w-full h-32 flex items-center justify-center p-1"
+              className="w-full h-28 flex items-center justify-center p-0 overflow-hidden"
             >
               <Image
                 src={theme.imageUrl}
                 alt={theme.name}
-                width={80}
-                height={80}
-                className="mb-1"
+                width={120}
+                height={120}
+                className="object-cover w-full h-full"
               />
             </Button>
             <span className="text-center text-xs mt-1">{theme.name}</span>
